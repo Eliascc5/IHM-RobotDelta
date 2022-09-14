@@ -16,6 +16,8 @@ MainWindow::MainWindow(QWidget *parent)
     // Adding title for widget
     QMainWindow::setWindowTitle("IHM Robot delta");
 
+    FlagHoming=false;
+
     // Ports
     QList<QSerialPortInfo> ports = info.availablePorts();
     QList<QString> stringPorts;

@@ -1,10 +1,8 @@
 <RCC>
     <qresource prefix="/resources">
-        <file>resources/arrow_yp.svg</file>
-        <file>resources/arrow_xn.svg</file>
-        <file>resources/arrow_xp.svg</file>
-        <file>resources/arrow_yn.svg</file>
         <file>resources/35arrowupp.png</file>
         <file>resources/35arrowdown.png</file>
+        <file>resources/35arrowLeft.png</file>
+        <file>resources/35arrowRight.png</file>
     </qresource>
 </RCC>
