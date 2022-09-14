@@ -132,7 +132,7 @@ QTabBar::tab {
        <enum>QTabWidget::North</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tab_connection">
        <attribute name="title">
@@ -882,8 +882,8 @@ border-radius: 1px;
          <rect>
           <x>290</x>
           <y>40</y>
-          <width>510</width>
-          <height>400</height>
+          <width>561</width>
+          <height>401</height>
          </rect>
         </property>
         <property name="sizePolicy">

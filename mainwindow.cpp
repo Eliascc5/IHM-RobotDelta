@@ -33,6 +33,24 @@ MainWindow::MainWindow(QWidget *parent)
     ui->comboBox_baud->addItems(stringBaudRates);
 
     /*Configuration of QCustomPlot*/
+    //Styles of graphs
+
+    this->ui->velProfilePlot->setBackground(QBrush(QColor(104, 130, 170)));
+
+
+    QPen pen1;
+    pen1.setWidth(3);
+    pen1.setColor(QColor(255,0,0));
+    QPen pen2;
+    pen2.setWidth(3);
+    pen2.setColor(QColor(0,255,0));
+
+    QPen pen3;
+    pen3.setWidth(3);
+    pen3.setColor(QColor(0,0,255));
+    QPen pen4;
+    pen4.setWidth(3);
+    pen4.setColor(QColor(0,0,0));
 
     //Create Rectangle Area and add to QCustomplot
     QCPAxisRect * R00=new QCPAxisRect(this->ui->velProfilePlot);
@@ -46,6 +64,7 @@ MainWindow::MainWindow(QWidget *parent)
     this->ui->velProfilePlot->plotLayout()->addElement(2,0,R20);
     this->ui->velProfilePlot->plotLayout()->addElement(3,0,R30);
 
+
     //Draw graphs with data
     this->ui->velProfilePlot->addGraph(R00->axis(QCPAxis::atBottom),R00->axis(QCPAxis::atLeft));
     this->ui->velProfilePlot->addGraph(R10->axis(QCPAxis::atBottom),R10->axis(QCPAxis::atLeft));
@@ -57,24 +76,37 @@ MainWindow::MainWindow(QWidget *parent)
     this->ui->velProfilePlot->graph(2)->setName("Aceleration");
     this->ui->velProfilePlot->graph(3)->setName("Jerk");
 
+    this->ui->velProfilePlot->graph(0)->setPen(pen1);
+    this->ui->velProfilePlot->graph(1)->setPen(pen2);
+    this->ui->velProfilePlot->graph(2)->setPen(pen3);
+    this->ui->velProfilePlot->graph(3)->setPen(pen4);
+
     //Add Legends
     QCPLegend *arLegend00=new QCPLegend;
     R00->insetLayout()->addElement(arLegend00,Qt::AlignTop|Qt::AlignRight);
+    arLegend00->setBrush(QColor(255, 255, 255, 100));
+    arLegend00->setBorderPen(Qt::NoPen);
     arLegend00->setLayer("legend");
     arLegend00->addItem(new QCPPlottableLegendItem(arLegend00, this->ui->velProfilePlot->graph(0)));
 
     QCPLegend *arLegend10=new QCPLegend;
     R10->insetLayout()->addElement(arLegend10,Qt::AlignTop|Qt::AlignRight);
+    arLegend10->setBrush(QColor(255, 255, 255, 100));
+    arLegend10->setBorderPen(Qt::NoPen);
     arLegend10->setLayer("legend");
     arLegend10->addItem(new QCPPlottableLegendItem(arLegend10, this->ui->velProfilePlot->graph(1)));
 
     QCPLegend *arLegend20=new QCPLegend;
     R20->insetLayout()->addElement(arLegend20,Qt::AlignTop|Qt::AlignRight);
+    arLegend20->setBrush(QColor(255, 255, 255, 100));
+    arLegend20->setBorderPen(Qt::NoPen);
     arLegend20->setLayer("legend");
     arLegend20->addItem(new QCPPlottableLegendItem(arLegend20, this->ui->velProfilePlot->graph(2)));
 
     QCPLegend *arLegend30=new QCPLegend;
     R30->insetLayout()->addElement(arLegend30,Qt::AlignTop|Qt::AlignRight);
+    arLegend30->setBrush(QColor(255, 255, 255, 100));
+    arLegend30->setBorderPen(Qt::NoPen);
     arLegend30->setLayer("legend");
     arLegend30->addItem(new QCPPlottableLegendItem(arLegend30, this->ui->velProfilePlot->graph(3)));
 
